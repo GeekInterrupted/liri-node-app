@@ -27,6 +27,9 @@ switch (yourWishIsMyCommand) {
     case "movie-this":
         movieThis(userInput);
         break;
+    case "do-what-it-says":
+        doWhatItSays("do-what-it-says");
+        break;
 }
 
 //1. `node liri.js my-tweets`
@@ -98,4 +101,16 @@ function movieThis(userInput) {
     });
 
 
+};
+
+//4. `node liri.js do-what-it-says`
+//   * Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
+//     * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
+//     * Feel free to change the text in that document to test out the feature for other commands.
+
+function doWhatItSays() {
+    fs.readFile("random.txt", "utf8", function(error, data) {
+        console.log(data);
+        spotifyThisSong("do-what-it-says");
+    })
 };
