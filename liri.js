@@ -87,7 +87,7 @@ function movieThis(userInput) {
         userInput = "Mr. Nobody";
         console.log("If you haven't watched Mr. Nobody, then you should");
     }
-    request("http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&r=json", function(err, response, body) {
+    request("http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&r=json&tomatoes=true", function(err, response, body) {
         body = JSON.parse(body);
         console.log("Movie Title: " + body.Title);
         console.log("Year: " + body.Year);
@@ -96,8 +96,7 @@ function movieThis(userInput) {
         console.log("Language: " + body.Language);
         console.log("Plot: " + body.Plot);
         console.log("Actors: " + body.Actors);
-
-        //TODO rotten tomatoes
+        console.log("Rotten Tomatoes: " + body.tomatoURL);
     });
 
 
