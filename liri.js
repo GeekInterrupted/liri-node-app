@@ -11,11 +11,6 @@ var client = new twitter(keys.twitterKeys);
 var yourWishIsMyCommand = process.argv[2];
 var userInput = process.argv[3];
 
-// if (yourWishIsMyCommand === "my-tweets") {
-//     console.log("Me tweets");
-//     myTweets();
-// }
-
 //using switch for different commands
 switch (yourWishIsMyCommand) {
     case "my-tweets":
@@ -80,8 +75,6 @@ function spotifyThisSong(userInput) {
 //       * Actors in the movie.
 //       * Rotten Tomatoes URL.
 //   * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
-//     * If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/>
-//     * It's on Netflix!
 function movieThis(userInput) {
     if (userInput === undefined) {
         userInput = "Mr. Nobody";
@@ -98,8 +91,6 @@ function movieThis(userInput) {
         console.log("Actors: " + body.Actors);
         console.log("Rotten Tomatoes: " + body.tomatoURL);
     });
-
-
 };
 
 //4. `node liri.js do-what-it-says`
